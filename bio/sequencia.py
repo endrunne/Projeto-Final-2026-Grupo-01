@@ -131,4 +131,18 @@ def traduzir(sequencia, parar=False):
         from bio.constantes import DNA_PARA_AMINOACIDO, DNA_STOP_CODONS
     Dica: para pegar as trincas, o passo do range pode ser 3 -> range(0, len, 3).
     """
-    raise NotImplementedError("Implemente a função traduzir")
+    traducao = ""
+    for s in range(0, len(sequencia), 3):
+        codon = sequencia[s:s+3]
+        codon_parada = codon in DNA_STOP_CODONS
+
+        if codon_parada and parar:
+            return traducao
+
+        if codon_parada:
+            traducao += "*"
+        elif DNA_PARA_AMINOACIDO[codon]:
+            traducao += DNA_PARA_AMINOACIDO[codon]
+        else:
+            traducao += "N"
+    return traducao
