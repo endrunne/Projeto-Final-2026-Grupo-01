@@ -39,8 +39,13 @@ def complementar_reversa(sequencia):
     a função complementar() que acabou de escrever e depois inverter o
     resultado (lembre-se do truque de fatiamento [::-1]).
     """
-    raise NotImplementedError("Implemente a função complementar_reversa")
+    
+    sequencia_complementar_reversa = ""
 
+    for base in range(len(sequencia), 0, -1):
+        sequencia_complementar_reversa = sequencia_complementar_reversa + CONVERSOR_DE_BASE [base]
+
+    return sequencia_complementar_reversa
 
 def transcrever(sequencia):
     """

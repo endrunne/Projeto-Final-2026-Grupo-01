@@ -25,7 +25,7 @@ print(complementar("ATCG"))
 
 
 # 2) complementar_reversa — esperado: "CGAT"
-# print(complementar_reversa("ATCG"))
+print(complementar_reversa("ATCG"))
 
 
 # 3) transcrever          — esperado: "AUCG"
