@@ -50,7 +50,13 @@ def transcrever(sequencia):
 
     Dica: na transcrição, a base T (timina) vira U (uracila).
     """
-    raise NotImplementedError("Implemente a função transcrever")
+    transcricao = ""
+    for s in sequencia:
+        if s == 'T':
+            transcricao += 'U'
+        else:
+            transcricao += s
+    return transcricao
 
 
 
