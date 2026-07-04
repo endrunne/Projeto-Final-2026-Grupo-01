@@ -42,8 +42,9 @@ def complementar_reversa(sequencia):
     
     sequencia_complementar_reversa = ""
 
-    for base in range(len(sequencia), 0, -1):
-        sequencia_complementar_reversa = sequencia_complementar_reversa + CONVERSOR_DE_BASE [base]
+    for i in range(len(sequencia), 0, -1):
+
+        sequencia_complementar_reversa = sequencia_complementar_reversa + CONVERSOR_DE_BASE [sequencia[i-1]]
 
     return sequencia_complementar_reversa
 
