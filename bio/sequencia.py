@@ -20,7 +20,13 @@ def complementar(sequencia):
     Dica: percorra cada base da sequência e vá montando (concatenando)
     a sequência complementar numa nova string.
     """
-    raise NotImplementedError("Implemente a função complementar")
+
+    sequencia_complementar = ""
+
+    for base in sequencia:
+        sequencia_complementar = sequencia_complementar + CONVERSOR_DE_BASE [base]
+
+    return sequencia_complementar
 
 
 def complementar_reversa(sequencia):

@@ -21,7 +21,7 @@ from bio.sequencia import (
 
 
 # 1) complementar        — esperado: "TAGC"
-# print(complementar("ATCG"))
+print(complementar("ATCG"))
 
 
 # 2) complementar_reversa — esperado: "CGAT"
