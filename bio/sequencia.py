@@ -76,7 +76,10 @@ def calcular_percentual(sequencia, bases):
     Dica: conte quantas bases da sequência estão dentro da lista "bases" e
     divida pelo tamanho total da sequência.
     """
-    raise NotImplementedError("Implemente a função calcular_percentual")
+    for base in sequencia:
+        if base in bases:
+            contador += 1
+    return round (contador / len(sequencia), 2)
 
 
 def calcular_percentual_gc(sequencia):

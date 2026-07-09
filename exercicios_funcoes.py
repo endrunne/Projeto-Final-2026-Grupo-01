@@ -46,6 +46,8 @@ print(complementar_reversa("ATCG"))
 # print(calcular_percentual("ATCGAAAA", ["A"]))
 
 
+
+
 # 7) calcular_percentual_gc — esperado: ~0.66 (4 Cs/Gs em 6 bases)
 # print(calcular_percentual_gc("ATCGCC"))
 
