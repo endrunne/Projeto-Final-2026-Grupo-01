@@ -76,6 +76,7 @@ def calcular_percentual(sequencia, bases):
     Dica: conte quantas bases da sequência estão dentro da lista "bases" e
     divida pelo tamanho total da sequência.
     """
+    contador = 0
     for base in sequencia:
         if base in bases:
             contador += 1
@@ -105,7 +106,11 @@ def contar_bases(sequencia):
     conforme percorre cada base da sequência. (Isso vai ser bem útil no
     exercício de pandas!)
     """
-    raise NotImplementedError("Implemente a função contar_bases")
+    contador = {"A": 0, "C": 0, "G": 0, "T": 0}
+    for s in sequencia:
+        contador[s] = contador[s] + 1
+
+    return contador
 
 
 def encontrar_inicio(sequencia):
