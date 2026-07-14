@@ -165,15 +165,12 @@ def traduzir(sequencia, parar=False):
     traducao = ""
     for s in range(0, len(sequencia), 3):
         codon = sequencia[s:s+3]
-        codon_parada = codon in DNA_STOP_CODONS
-
-        if codon_parada and parar:
-            return traducao
-
-        if codon_parada:
+        if codon in DNA_STOP_CODONS:
+            if parar:
+                return traducao
             traducao += "*"
-        elif DNA_PARA_AMINOACIDO[codon]:
+        elif codon in DNA_PARA_AMINOACIDO:
             traducao += DNA_PARA_AMINOACIDO[codon]
         else:
-            traducao += "N"
+            traducao += "X"
     return traducao
