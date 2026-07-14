@@ -32,7 +32,7 @@ print(complementar_reversa("ATCG"))
 #print(transcrever("ATCG"))
 
 # 4) encontrar_inicio     — esperado: "ATGGGGTAA" (começa no 1º ATG)
-# print(encontrar_inicio("CCCATGGGGTAA"))
+print(encontrar_inicio("CCCATGGGGTAA"))
 
 
 # 5) traduzir             — esperado: "MAIVMGR*KGAR*"
