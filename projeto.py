@@ -77,4 +77,9 @@ posteriormente processada em diferentes proteínas virais.
 # Parte 4 — Salve o resultado
 # ------------------------------------------------------------------
 # 1) filtre os vírus com gc > 0.5 (quantos são?)
+df_gc_alto = df[df["gc"] > 0.5]
+print(f"Vírus com GC > 0.5: {len(df_gc_alto)} de {len(df)}")
+print(df_gc_alto[["nome", "gc"]])
+
 # 2) df.to_csv("resultado.csv", index=False)
+df.to_csv("resultado.csv", index=False)
