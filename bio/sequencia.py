@@ -76,6 +76,7 @@ def calcular_percentual(sequencia, bases):
     Dica: conte quantas bases da sequência estão dentro da lista "bases" e
     divida pelo tamanho total da sequência.
     """
+    contador = 0
     for base in sequencia:
         if base in bases:
             contador += 1
@@ -105,7 +106,11 @@ def contar_bases(sequencia):
     conforme percorre cada base da sequência. (Isso vai ser bem útil no
     exercício de pandas!)
     """
-    raise NotImplementedError("Implemente a função contar_bases")
+    contador = {"A": 0, "C": 0, "G": 0, "T": 0}
+    for s in sequencia:
+        contador[s] = contador[s] + 1
+
+    return contador
 
 
 def encontrar_inicio(sequencia):
@@ -126,7 +131,12 @@ def encontrar_inicio(sequencia):
     Dica: as strings têm um método .find("ATG") que devolve a posição do
     primeiro "ATG" (ou -1 se não encontrar). A partir daí, use fatiamento.
     """
-    raise NotImplementedError("Implemente a função encontrar_inicio")
+    inicio = sequencia.find("ATG")
+
+    if inicio == -1:
+        return ""
+    else:
+        return sequencia[inicio::]
 
 
 def traduzir(sequencia, parar=False):
@@ -157,13 +167,15 @@ def traduzir(sequencia, parar=False):
         codon = sequencia[s:s+3]
         codon_parada = codon in DNA_STOP_CODONS
 
-        if codon_parada and parar:
-            return traducao
-
         if codon_parada:
             traducao += "*"
-        elif DNA_PARA_AMINOACIDO[codon]:
+
+            if parar:
+                return traducao
+            
+        elif codon in DNA_PARA_AMINOACIDO:
             traducao += DNA_PARA_AMINOACIDO[codon]
+        
         else:
-            traducao += "N"
+            traducao += "X"
     return traducao
