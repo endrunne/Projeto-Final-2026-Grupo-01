@@ -43,20 +43,34 @@ df["gc"] = df["sequencia"].apply(calcular_percentual_gc)
 df_ordenado = df.sort_values(by='gc')
 dez_menores_gc = df_ordenado[["nome", "gc"]].head(10)
 dez_maiores_gc = df_ordenado[["nome", "gc"]].tail(10)
-#print(f'Os 10 vírus com menor conteúdo GC em suas sequência são: {dez_menores_gc}')
-#print(f'Os 10 vírus com maior conteúdo GC em suas sequência são: {dez_maiores_gc}')
+print(f'Os 10 vírus com menor conteúdo GC em suas sequência são: {dez_menores_gc}')
+print(f'Os 10 vírus com maior conteúdo GC em suas sequência são: {dez_maiores_gc}')
 
 # 3) escreva sua conclusão sobre o padrão que observou
-# É possível notar que os vírus com menor conteúdo GC são pertencentes ao gênero Pestivirus.
-# Enquanto isso, os vírus com maior conteúdo GC são pertencentes ao gênero Pegivirus e Hepacivirus.
+'''É possível notar que os vírus com menor conteúdo GC são pertencentes ao gênero Pestivirus.
+Enquanto isso, os vírus com maior conteúdo GC são pertencentes ao gênero Pegivirus e Hepacivirus.'''
 
-# ------------------------------------------------------------------
 # Parte 3 — Encontre a proteína (a poliproteína viral)
 # ------------------------------------------------------------------
 # 1) coluna "proteina": traduzir(encontrar_inicio(seq), parar=True)
+df["proteina"] = df["sequencia"].apply(
+    lambda sequencia: traduzir(encontrar_inicio(sequencia), parar=True)
+)
 # 2) coluna "tamanho_proteina": len da proteína
+df["tamanho_proteina"] = df["proteina"].apply(len)
 # 3) coluna "cobertura": (tamanho_proteina * 3) / tamanho
+df["tamanho"] = df["sequencia"].apply(len)
+df["cobertura"] = (df["tamanho_proteina"] * 3) / df["tamanho"]
+print(df.head(10))
 # 4) escreva sua conclusão (qual a cobertura típica? faz sentido ser 1 poliproteína?)
+'''
+A cobertura encontrada apresentou valores predominantemente altos, 
+com mediana de aproximadamente 0,93 e 75% dos vírus apresentando cobertura acima de 0,95.
+Isso indica que a região traduzida corresponde à maior parte do genoma viral.
+Esse resultado é esperado para vírus da família Flaviviridae, 
+que possuem uma única ORF longa responsável pela produção de uma poliproteína, 
+posteriormente processada em diferentes proteínas virais.
+'''
 
 
 # ------------------------------------------------------------------
