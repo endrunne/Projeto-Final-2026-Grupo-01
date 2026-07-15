@@ -29,16 +29,26 @@ from bio.sequencia import (
 # ------------------------------------------------------------------
 organismos = ler_fasta("arquivos/Flaviviridae-genomes.fasta")
 df = pd.DataFrame(organismos)
-print(df.head())
+#print(df.head())
 
 
 # ------------------------------------------------------------------
 # Parte 2 — O conteúdo GC é aleatório?
 # ------------------------------------------------------------------
 # 1) crie a coluna "gc" com df["sequencia"].apply(calcular_percentual_gc)
-# 2) mostre os 10 maiores e os 10 menores GC (com o nome!) -> usar função sort_values do pandas
-# 3) escreva sua conclusão sobre o padrão que observou
+df["gc"] = df["sequencia"].apply(calcular_percentual_gc)
+#print(df.head())
 
+# 2) mostre os 10 maiores e os 10 menores GC (com o nome!) -> usar função sort_values do pandas
+df_ordenado = df.sort_values(by='gc')
+dez_menores_gc = df_ordenado[["nome", "gc"]].head(10)
+dez_maiores_gc = df_ordenado[["nome", "gc"]].tail(10)
+#print(f'Os 10 vírus com menor conteúdo GC em suas sequência são: {dez_menores_gc}')
+#print(f'Os 10 vírus com maior conteúdo GC em suas sequência são: {dez_maiores_gc}')
+
+# 3) escreva sua conclusão sobre o padrão que observou
+# É possível notar que os vírus com menor conteúdo GC são pertencentes ao gênero Pestivirus.
+# Enquanto isso, os vírus com maior conteúdo GC são pertencentes ao gênero Pegivirus e Hepacivirus.
 
 # ------------------------------------------------------------------
 # Parte 3 — Encontre a proteína (a poliproteína viral)

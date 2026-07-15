@@ -21,18 +21,18 @@ from bio.sequencia import (
 
 
 # 1) complementar        — esperado: "TAGC"
-print(complementar("ATCG"))
+#print(complementar("ATCG"))
 
 
 # 2) complementar_reversa — esperado: "CGAT"
-print(complementar_reversa("ATCG"))
+#print(complementar_reversa("ATCG"))
 
 
 # 3) transcrever          — esperado: "AUCG"
 #print(transcrever("ATCG"))
 
 # 4) encontrar_inicio     — esperado: "ATGGGGTAA" (começa no 1º ATG)
-# print(encontrar_inicio("CCCATGGGGTAA"))
+#print(encontrar_inicio("CCCATGGGGTAA"))
 
 
 # 5) traduzir             — esperado: "MAIVMGR*KGAR*"
