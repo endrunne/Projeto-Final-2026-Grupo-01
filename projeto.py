@@ -32,6 +32,8 @@ df = pd.DataFrame(organismos)
 #print(df.head())
 
 
+
+
 # ------------------------------------------------------------------
 # Parte 2 — O conteúdo GC é aleatório?
 # ------------------------------------------------------------------
@@ -68,7 +70,7 @@ A cobertura encontrada apresentou valores predominantemente altos,
 com mediana de aproximadamente 0,93 e 75% dos vírus apresentando cobertura acima de 0,95.
 Isso indica que a região traduzida corresponde à maior parte do genoma viral.
 Esse resultado é esperado para vírus da família Flaviviridae, 
-que possuem uma única ORF longa responsável pela produção de uma poliproteína, 
+que tem uma única sequência codificante longa responsável pela produção de uma poliproteína, 
 posteriormente processada em diferentes proteínas virais.
 '''
 
