@@ -49,7 +49,7 @@ print(f'Os 10 vírus com menor conteúdo GC em suas sequência são: {dez_menore
 print(f'Os 10 vírus com maior conteúdo GC em suas sequência são: {dez_maiores_gc}')
 
 # 3) escreva sua conclusão sobre o padrão que observou
-'''É possível notar que os vírus com menor conteúdo GC são pertencentes ao gênero Pestivirus.
+'''É possível notar que a maioria dos vírus com menor conteúdo GC são pertencentes ao gênero Pestivirus.
 Enquanto isso, os vírus com maior conteúdo GC são pertencentes ao gênero Pegivirus e Hepacivirus.'''
 
 # Parte 3 — Encontre a proteína (a poliproteína viral)
@@ -67,7 +67,7 @@ print(df.head(10))
 # 4) escreva sua conclusão (qual a cobertura típica? faz sentido ser 1 poliproteína?)
 '''
 A cobertura encontrada apresentou valores predominantemente altos, 
-com mediana de aproximadamente 0,93 e 75% dos vírus apresentando cobertura acima de 0,95.
+com mediana de aproximadamente 0,93 e 75% dos vírus apresentando cobertura de até 0,95.
 Isso indica que a região traduzida corresponde à maior parte do genoma viral.
 Esse resultado é esperado para vírus da família Flaviviridae, 
 que tem uma única sequência codificante longa responsável pela produção de uma poliproteína, 
